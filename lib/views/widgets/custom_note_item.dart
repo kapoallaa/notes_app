@@ -7,6 +7,7 @@ class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key, required this.note});
 
   final NoteModel note;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,7 +31,9 @@ class CustomNoteItem extends StatelessWidget {
                 style: const TextStyle(color: Colors.black, fontSize: 26),
               ),
               trailing: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    note.delete();
+                  },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
                     color: Colors.black,
